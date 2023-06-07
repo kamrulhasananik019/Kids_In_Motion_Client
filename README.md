@@ -28,3 +28,34 @@ b712-summer-camp-client-side-Anik407 created by GitHub Classroom
 
 
 
+  
+  <h1><strong> Packages/Technologies Used</strong>  <h1>
+
+  * React: A JavaScript library for building user interfaces.
+
+  * Vite: A fast build tool for modern web applications.
+
+  * Firebase: A comprehensive platform for building web and mobile applications, including 
+    authentication, database, and hosting services.
+
+  * React Router: A library for handling routing in React applications.
+
+  * Firebase Authentication: Firebase's authentication service for user registration and login.
+
+  * Firebase Hosting: Firebase's hosting service for deploying and hosting your website.
+
+  * tailwind:Tailwind CSS is a utility-first CSS framework that allows you to rapidly build user 
+    interfaces.
+ 
+  * Axios: A promise-based HTTP client for making API requests.
+  
+  * React Icons: A collection of popular icons as React components.
+
+
+
+   Please note that this is just a sample list of packages and technologies commonly used in React and 
+    Firebase projects. You can customize it based on the specific packages and technologies you have used 
+    in your project.
+
+    Feel free to update the list with any additional packages or technologies that are relevant to your 
+    Summer Vacation website.
