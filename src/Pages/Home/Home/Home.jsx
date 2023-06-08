@@ -1,10 +1,13 @@
 import React from 'react';
+import useColorMode from '../../../DarkMode/useColorMode/useColorMode';
 
 const Home = () => {
+    const [colorMode, setColorMode] = useColorMode();
+
     return (
-        <div>
-            this is home
-        </div>
+      <div>
+        this home
+      </div>
     );
 };
 

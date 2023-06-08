@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 
 
 const SignUp = () => {
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
 
     const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -19,7 +19,7 @@ const SignUp = () => {
                 console.log(loggedUser);
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        const saveUser = { name: data.name, email: data.email , password: data.password, photo:data.photoURL }
+                        const saveUser = { name: data.name, email: data.email, password: data.password, photo: data.photoURL }
 
                         fetch('http://localhost:5000/users', {
                             method: 'POST',
@@ -49,12 +49,15 @@ const SignUp = () => {
             })
 
     };
+
+    const password = watch('password');
+
     return (
-        <>
+        <section className='None'>
             <Helmet>
                 <title> s | Sign Up</title>
             </Helmet>
-            <div className="hero min-h-screen bg-base-200">
+            <div>
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Login now!</h1>
@@ -97,9 +100,22 @@ const SignUp = () => {
                                 {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
                                 {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than 20 characters</p>}
                                 {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one Uppercase one lower case, one number and one special character.</p>}
+                            </div>
+                            <div className="form-control">
                                 <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                    <span className="label-text">Confirm Password</span>
                                 </label>
+
+                                <input type='password' {...register("confirmPassword", {
+                                    required: true,
+                                    validate: (value) =>
+                                        value === password || "Passwords do not match"
+                                })} placeholder="Confirm password" className="input input-bordered" />
+
+                                {errors.confirmPassword?.type === 'required' && <span className="text-red-500">This field is required</span>}
+                                {errors.confirmPassword?.type && (
+                                    <span className="text-red-500">{errors.confirmPassword.message}</span>
+                                )}
                             </div>
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="Sign Up" />
@@ -109,7 +125,7 @@ const SignUp = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </section>
     );
 };
 

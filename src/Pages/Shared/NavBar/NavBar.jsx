@@ -59,7 +59,7 @@ const handleLogOut=()=>{
                                         <img src={user?.photoURL} />
                                     </div>
                                 </label>
-                              </> : <>
+                            </> : <>
                                 <Link to='/login' >LogIn</Link>
                             </>
                         }
