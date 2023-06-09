@@ -15,7 +15,8 @@ const handleLogOut=()=>{
 
     return (
         <section className='bg-orange-500'>
-            <div className="navbar ">
+           <div className='md:mx-28'>
+           <div className="navbar  ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -40,12 +41,14 @@ const handleLogOut=()=>{
                         <li>
                             <Link to='/' >Home</Link>
                         </li>
-
                         <li>
                             <Link to='/signup' >Sign Up</Link>
                         </li>
                         <li>
                             <Link to='/test' >Test</Link>
+                        </li>
+                        <li>
+                            <Link to='/dashboard'>Dashboard</Link>
                         </li>
                     </ul>
                 </div>
@@ -66,6 +69,7 @@ const handleLogOut=()=>{
                     </div>
                 </div>
             </div>
+           </div>
 
         </section>
     );

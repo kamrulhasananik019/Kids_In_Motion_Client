@@ -7,29 +7,41 @@ import SignUp from "../Pages/SignUp/SignUp";
 import LogIn from "../Pages/LogIn/LogIn";
 import Test from "../Pages/Test/Test";
 import PrivateRoute from "./PrivetRoute";
+import Dashboard from "../Layout/Dashboard";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
-        errorElement:<ErrorPage></ErrorPage> ,
-        children:[
+        errorElement: <ErrorPage></ErrorPage>,
+        children: [
             {
                 path: '/',
-                element:<Home></Home>
+                element: <Home></Home>
             },
             {
-                path:'signup',
-                element:<SignUp></SignUp>
+                path: 'signup',
+                element: <SignUp></SignUp>
             },
             {
-                path:'login',
-                element:<LogIn></LogIn>
+                path: 'login',
+                element: <LogIn></LogIn>
             },
             {
-                path:'test',
-                element:<PrivateRoute><Test></Test></PrivateRoute>
+                path: 'test',
+                element: <PrivateRoute><Test></Test></PrivateRoute>
+            },
+            {
+                path: 'dashboard',
+                element: <Dashboard></Dashboard>,
+                children: [
+                    {
+                        path: 'allusers',
+                        element:<AllUsers></AllUsers>
+                    }
+                ]
             }
         ]
     },

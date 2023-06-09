@@ -12,3 +12,10 @@
     background-color: #fff;
     color: #333;
 }
+
+.drawer-side a.active {
+    color: rgb(182, 99, 99);
+  }
+  .drawer-side a {
+    background-color: transparent;
+  }
