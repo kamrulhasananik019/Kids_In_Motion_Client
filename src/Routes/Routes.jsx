@@ -9,6 +9,7 @@ import Test from "../Pages/Test/Test";
 import PrivateRoute from "./PrivetRoute";
 import Dashboard from "../Layout/Dashboard";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import AddClass from "../Pages/Dashboard/AddClass/AddClass";
 
 
 export const router = createBrowserRouter([
@@ -35,11 +36,15 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'dashboard',
-                element: <Dashboard></Dashboard>,
+                element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
                 children: [
                     {
                         path: 'allusers',
                         element:<AllUsers></AllUsers>
+                    },
+                    {
+                        path:'addclass',
+                        element:<AddClass></AddClass>
                     }
                 ]
             }

@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
-import { FaTrashAlt, FaUserShield } from "react-icons/fa";
+import { FaTrashAlt, FaUserGraduate, FaUserShield } from "react-icons/fa";
 import useAxiosSecure from '../../../Components/hook/useAxiosSecure';
 
 
@@ -34,6 +34,28 @@ const AllUsers = () => {
             })
     }
 
+
+    const handleMakeInstructor = user => {
+        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount) {
+                    refetch();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `${user.name} is an instructor Now!`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+    }
+
+
     return (
         <div className="w-full">
             <Helmet>
@@ -58,9 +80,26 @@ const AllUsers = () => {
                                 <th>{index + 1}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td>{user.role === 'admin' ? 'admin' :
+                                <td >
+                                    {user.role === 'admin' ?  <>
+                                     
+                                        {user.role}
+                                    </> : <>   {user.role === 'instructor' ? 'instructor' :
+                                        <button onClick={() => handleMakeInstructor(user)} className="btn btn-ghost bg-orange-600  text-white space-x-4"><FaUserGraduate ></FaUserGraduate></button>
+                                    } </>}
+
+                                    {/* {user.role === 'admin' ? 'admin' :
                                     <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600  text-white"><FaUserShield></FaUserShield></button>
-                                }</td>
+                                }
+
+                                {user.role === 'instructor' ? 'instructor' :
+                                        <button onClick={() => handleMakeInstructor(user)} className="btn btn-ghost bg-orange-600  text-white space-x-4"><FaUserGraduate ></FaUserGraduate></button>
+                                    } */}
+
+                                </td>
+                               
+
+                                <td></td>
                             </tr>)
                         }
 

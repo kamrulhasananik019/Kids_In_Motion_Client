@@ -2,6 +2,9 @@
 import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensils, FaBook, FaUsers } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../Components/hook/useAdmin';
+import useInstructor from '../Components/hook/useInstructor';
+import {AiOutlineVideoCameraAdd} from 'react-icons/ai'
+
 // import useCart from "../hooks/useCart";
 // import useAdmin from "../hooks/useAdmin";
 
@@ -10,7 +13,7 @@ const Dashboard = () => {
 
     // TODO: load data from the server to have dynamic isAdmin based on Data
     const [isAdmin] = useAdmin();
-
+const [isInstructor]=useInstructor()
     return (
         <section>
             <div className="drawer lg:drawer-open">
@@ -44,6 +47,15 @@ const Dashboard = () => {
                                 </li>
                             </>
                         }
+                        {
+                            isInstructor ? <>
+                                <li><NavLink to="/dashboard/addclass"><AiOutlineVideoCameraAdd></AiOutlineVideoCameraAdd>Add Class</NavLink></li>
+                            </> : <>
+
+                            </>
+                        }
+
+
 
                         <div className="divider"></div>
                         <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
