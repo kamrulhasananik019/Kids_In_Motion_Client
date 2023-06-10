@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import useAuth from '../../../Components/hook/useAuth';
-import useAxiosSecure from '../../../Components/hook/useAxiosSecure';
+import useAuth from '../../../../Components/hook/useAuth';
+
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../../../Components/hook/useAxiosSecure';
 
 const img_hosting_token = import.meta.env.VITE_Image_Upload_token;
 
@@ -27,7 +28,6 @@ const AddClass = () => {
                     const imgURL = imgResponse.data.display_url;
                     const { name, price, seats, classname, email } = data;
                     const addclass = { name, price: parseFloat(price), seats: parseFloat(seats), classname, email, image: imgURL , status: 'pending'}
-                    console.log(addclass)
                     axiosSecure.post('/addclass', addclass)
                         .then(data => {
                             console.log('after posting new menu item', data.data)
