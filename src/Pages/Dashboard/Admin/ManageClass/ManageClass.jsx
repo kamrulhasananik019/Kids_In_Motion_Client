@@ -51,7 +51,6 @@ const ManageClass = () => {
                                         </div>
                                         <div>
                                             <div className="font-bold">{item.classname}</div>
-                                            <div className="text-sm opacity-50">{item.email}</div>
                                         </div>
                                     </div>
                                 </td>
