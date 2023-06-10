@@ -1,15 +1,50 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../Components/hook/useAuth';
+import useAxiosSecure from '../../../Components/hook/useAxiosSecure';
+import Swal from 'sweetalert2';
+
+const img_hosting_token = import.meta.env.VITE_Image_Upload_token;
 
 
 const AddClass = () => {
+    const [axiosSecure] = useAxiosSecure();
     const { user } = useAuth();
-    console.log(user);
-
     const { register, handleSubmit, reset } = useForm();
+    const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`
 
     const onSubmit = data => {
+        const formData = new FormData();
+        formData.append('image', data.image[0])
+
+        fetch(img_hosting_url, {
+            method: 'POST',
+            body: formData
+        })
+            .then(res => res.json())
+            .then(imgResponse => {
+                if (imgResponse.success) {
+                    const imgURL = imgResponse.data.display_url;
+                    const { name, price, seats, classname, email } = data;
+                    const addclass = { name, price: parseFloat(price), seats: parseFloat(seats), classname, email, image: imgURL , status: 'pending'}
+                    console.log(addclass)
+                    axiosSecure.post('/addclass', addclass)
+                        .then(data => {
+                            console.log('after posting new menu item', data.data)
+                            if (data.data.insertedId) {
+                                reset();
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: 'class added successfully',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            }
+                        })
+
+                }
+            })
 
     };
 
@@ -19,7 +54,7 @@ const AddClass = () => {
             <div>
 
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div  className="flex my-4">
+                    <div className="flex my-4">
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text font-semibold">Instructor name</span>
@@ -36,36 +71,31 @@ const AddClass = () => {
                         </div>
                     </div>
                     <div className="flex my-4">
-                        <div className="form-control w-full ">
+                        <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text">Category*</span>
+                                <span className="label-text font-semibold">Available seats
+                                </span>
                             </label>
-                            <select defaultValue="Pick One" {...register("category", { required: true })} className="select select-bordered">
-                                <option disabled>Pick One</option>
-                                <option>Pizza</option>
-                                <option>Soup</option>
-                                <option>Salad</option>
-                                <option>Dessert</option>
-                                <option>Desi</option>
-                                <option>Drinks</option>
-                            </select>
+                            <input type="text" placeholder='Available seats'
+                                {...register("seats", { required: true })}
+                                className="input input-bordered w-full " />
                         </div>
                         <div className="form-control w-full ml-4">
                             <label className="label">
-                                <span className="label-text font-semibold">Price*</span>
+                                <span className="label-text font-semibold">Price</span>
                             </label>
                             <input type="number" {...register("price", { required: true })} placeholder="Type here" className="input input-bordered w-full " />
                         </div>
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Recipe Details</span>
+                            <span className="label-text">Class name</span>
                         </label>
-                        <textarea {...register("recipe", { required: true })} className="textarea textarea-bordered h-24" placeholder="Bio"></textarea>
+                        <input type="name" {...register("classname", { required: true })} className="input input-bordered w-full " />
                     </div>
                     <div className="form-control w-full my-4">
                         <label className="label">
-                            <span className="label-text">Class Image*</span>
+                            <span className="label-text">Class Image</span>
                         </label>
                         <input type="file" {...register("image", { required: true })} className="file-input file-input-bordered w-full " />
                     </div>
