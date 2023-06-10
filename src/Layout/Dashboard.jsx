@@ -3,17 +3,15 @@ import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensils, FaBook, Fa
 import { NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../Components/hook/useAdmin';
 import useInstructor from '../Components/hook/useInstructor';
-import {AiOutlineVideoCameraAdd} from 'react-icons/ai'
-
-// import useCart from "../hooks/useCart";
-// import useAdmin from "../hooks/useAdmin";
+import { AiOutlineVideoCameraAdd } from 'react-icons/ai'
+import { MdVideoLibrary } from 'react-icons/md';
 
 const Dashboard = () => {
-    // const [cart] = useCart();
 
-    // TODO: load data from the server to have dynamic isAdmin based on Data
+
+
     const [isAdmin] = useAdmin();
-const [isInstructor]=useInstructor()
+    const [isInstructor] = useInstructor()
     return (
         <section>
             <div className="drawer lg:drawer-open">
@@ -38,14 +36,15 @@ const [isInstructor]=useInstructor()
                                 <li><NavLink to="/dashboard/home"><FaHome></FaHome> User Home</NavLink></li>
                                 <li><NavLink to="/dashboard/reservations"><FaCalendarAlt></FaCalendarAlt> Reservations</NavLink></li>
                                 <li><NavLink to="/dashboard/history"><FaWallet></FaWallet> Payment History</NavLink></li>
-                                <li>
-                                    <NavLink to="/dashboard/mycart"><FaShoppingCart></FaShoppingCart> My Cart
-                                    </NavLink>
-                                </li>
+
                             </>
                         }
                         {
                             isInstructor ? <>
+                                <li>
+                                    <NavLink to="/dashboard/myclasses"><MdVideoLibrary></MdVideoLibrary> My class
+                                    </NavLink>
+                                </li>
                                 <li><NavLink to="/dashboard/addclass"><AiOutlineVideoCameraAdd></AiOutlineVideoCameraAdd>Add Class</NavLink></li>
                             </> : <>
 
