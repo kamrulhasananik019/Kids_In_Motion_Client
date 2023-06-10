@@ -1,6 +1,7 @@
 import React from 'react';
-import useAxiosSecure from '../../../Components/hook/useAxiosSecure';
+
 import { useQuery } from '@tanstack/react-query';
+import useAxiosSecure from '../../../../Components/hook/useAxiosSecure';
 
 const ManageClass = () => {
     const [axiosSecure] = useAxiosSecure();

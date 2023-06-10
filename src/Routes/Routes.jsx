@@ -8,11 +8,13 @@ import LogIn from "../Pages/LogIn/LogIn";
 import Test from "../Pages/Test/Test";
 import PrivateRoute from "./PrivetRoute";
 import Dashboard from "../Layout/Dashboard";
-import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+
 
 import AdminRoute from "./AdminRoute";
-import ManageClass from "../Pages/Dashboard/ManageClass/ManageClass";
+
 import AddClass from "../Pages/Dashboard/Instructor/AddClass/AddClass";
+import AllUsers from "../Pages/Dashboard/Admin/AllUsers/AllUsers";
+import ManageClass from "../Pages/Dashboard/Admin/ManageClass/ManageClass";
 
 
 export const router = createBrowserRouter([

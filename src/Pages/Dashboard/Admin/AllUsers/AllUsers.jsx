@@ -3,7 +3,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
 import { FaTrashAlt, FaUserGraduate, FaUserShield } from "react-icons/fa";
-import useAxiosSecure from '../../../Components/hook/useAxiosSecure';
+import useAxiosSecure from '../../../../Components/hook/useAxiosSecure';
+
 
 
 
