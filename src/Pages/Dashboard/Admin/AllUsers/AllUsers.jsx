@@ -67,7 +67,7 @@ const AllUsers = () => {
                 <table className="table table-zebra w-full">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className='bg-gradient-to-r from-rose-100 to-teal-100'>
                             <th>#</th>
                             <th>Name</th>
                             <th>Email</th>

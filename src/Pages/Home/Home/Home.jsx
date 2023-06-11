@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useColorMode from '../../../DarkMode/useColorMode/useColorMode';
+import Banner from '../Banner/Banner';
 
 const Home = () => {
   const [colorMode, setColorMode] = useColorMode();
@@ -49,13 +50,10 @@ const Home = () => {
           )}
         </div>
       </div>
-
-
-      dnhsjkdhjkshjkldhnksjlhnakld
+      <div className='pt-20px'>
+        <Banner></Banner>
+      </div>
     </section>
-
-
-
 
   );
 };

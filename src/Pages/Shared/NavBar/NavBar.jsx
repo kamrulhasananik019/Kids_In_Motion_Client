@@ -14,7 +14,7 @@ const handleLogOut=()=>{
 }
 
     return (
-        <section className='bg-orange-500'>
+        <section className='bg-gradient-to-r from-rose-100 to-teal-100'>
            <div className='md:mx-28'>
            <div className="navbar  ">
                 <div className="navbar-start">
@@ -37,7 +37,8 @@ const handleLogOut=()=>{
                         </li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <img src="https://i.ibb.co/p2ZXTr4/kids-in-motion-summer-sports-camp-removebg-preview.png" width={90} alt="" />
+                    <a className="btn btn-ghost normal-case md:text-xl ">Kids in Motion</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

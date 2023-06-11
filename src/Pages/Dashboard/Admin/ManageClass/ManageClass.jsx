@@ -79,7 +79,7 @@ const ManageClass = () => {
                     </thead>
                     <tbody>
                         {allclass.map((item, index) => (
-                            <tr key={item._id}>
+                            <tr className='bg-gradient-to-r from-rose-100 to-teal-100' key={item._id}>
 
                                 <th>{index + 1}</th>
                                 <td>
