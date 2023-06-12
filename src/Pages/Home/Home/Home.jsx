@@ -12,7 +12,7 @@ const Home = () => {
       <div className='pt-20px'>
         <Banner></Banner>
         <IcnBanner></IcnBanner>
-        <Footer></Footer>
+  
       </div>
     </section>
 

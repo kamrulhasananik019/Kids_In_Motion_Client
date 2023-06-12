@@ -42,9 +42,10 @@ const NavBar = () => {
                                     <Dark></Dark>
                                 </li>
                             </ul>
-                        </div>
-                        <img src="https://i.ibb.co/p2ZXTr4/kids-in-motion-summer-sports-camp-removebg-preview.png" width={90} alt="" />
-                        <a className="btn btn-ghost normal-case md:text-xl ">Kids in Motion</a>
+                        </div >
+                   <img src="https://i.ibb.co/p2ZXTr4/kids-in-motion-summer-sports-camp-removebg-preview.png" width={50}  alt="" />
+                    
+                       <p className="btn btn-ghost normal-case md:text-xl ">Kids in Motion</p>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1">
