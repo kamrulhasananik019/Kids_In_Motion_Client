@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import useAuth from '../../../../Components/hook/useAuth';
 
 const MyClasses = () => {
-const {user}=useAuth()
+    const { user } = useAuth()
     const [axiosSecure] = useAxiosSecure();
     const { data: allclass = [], refetch } = useQuery(['allclass'], async () => {
         const res = await axiosSecure.get(`/myclass/${user.email}`)
@@ -28,7 +28,7 @@ const {user}=useAuth()
                             <th>Price</th>
                             <th>seats</th>
                             <th>Status</th>
-
+                            <th>Action</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -58,7 +58,7 @@ const {user}=useAuth()
                                 <td>{item.price}</td>
                                 <td>{item.seats}</td>
                                 <td>{item.status}</td>
-
+                                <button></button>
                             </tr>
                         ))}
 

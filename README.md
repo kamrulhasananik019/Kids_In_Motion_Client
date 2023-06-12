@@ -29,7 +29,7 @@ b712-summer-camp-client-side-Anik407 created by GitHub Classroom
 
 
   
-  <h1><strong> Packages/Technologies Used</strong>  <h1>
+  <h1><strong> Packages/Technologies Used</strong>  </h1>
 
   * React: A JavaScript library for building user interfaces.
 

@@ -121,7 +121,7 @@ const ManageClass = () => {
                         <h3 className="font-bold text-lg">Hello!</h3>
                         <textarea name="" className='border ' id="" cols="60" rows="10"></textarea>
                         <div className="modal-action">
-                            {/* if there is a button in form, it will close the modal */}
+                
                             <input className="btn btn-sm mt-4" type="submit" value="Add feedback" />
                         </div>
                     </form>

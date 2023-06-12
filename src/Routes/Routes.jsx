@@ -5,7 +5,6 @@ import Home from "../Pages/Home/Home/Home";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import SignUp from "../Pages/SignUp/SignUp";
 import LogIn from "../Pages/LogIn/LogIn";
-import Test from "../Pages/Test/Test";
 import PrivateRoute from "./PrivetRoute";
 import Dashboard from "../Layout/Dashboard";
 
@@ -17,6 +16,8 @@ import AllUsers from "../Pages/Dashboard/Admin/AllUsers/AllUsers";
 import ManageClass from "../Pages/Dashboard/Admin/ManageClass/ManageClass";
 import InstructorRoute from "./InstructorRoute";
 import MyClasses from "../Pages/Dashboard/Instructor/MyClasses/MyClasses";
+import AllClasses from "../Pages/AllClasses/AllClasses";
+import InstructorsPage from "../Pages/InstructorsPage/InstructorsPage";
 
 
 export const router = createBrowserRouter([
@@ -38,9 +39,14 @@ export const router = createBrowserRouter([
                 element: <LogIn></LogIn>
             },
             {
-                path: 'test',
-                element: <PrivateRoute><Test></Test></PrivateRoute>
+                path:'allclasses',
+                element:<AllClasses></AllClasses>
             },
+            {
+                path:'instructorspage',
+                element:<InstructorsPage></InstructorsPage>
+            }
+            ,
             {
                 path: 'dashboard',
                 element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
