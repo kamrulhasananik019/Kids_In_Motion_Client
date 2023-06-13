@@ -31,7 +31,7 @@ const AllClassCard = ({ allclass }) => {
     }
     return (
         <div>
-            <div key={allclass?._id} className="card card-compact  md:w-96  bg-base-100 shadow-xl">
+            <div key={allclass?._id} className="card card-compact h-96 md:w-96  bg-base-100 shadow-xl">
                 <figure>
                     <img src={allclass?.image} alt="Shoes" />
                 </figure>

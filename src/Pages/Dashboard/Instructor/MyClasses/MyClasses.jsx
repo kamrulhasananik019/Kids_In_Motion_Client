@@ -58,7 +58,7 @@ const MyClasses = () => {
                                 <td>{item.price}</td>
                                 <td>{item.seats}</td>
                                 <td>{item.status}</td>
-                                <button></button>
+                                <button className="btn btn-outline btn-secondary">Update </button>
                             </tr>
                         ))}
 

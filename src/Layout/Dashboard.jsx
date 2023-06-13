@@ -34,7 +34,7 @@ const Dashboard = () => {
                                 <li><NavLink to="/dashboard/manageclass"><FaBook></FaBook> Manage Class</NavLink></li>
                             </> : <>
                                 <li><NavLink to="/dashboard/home"><FaHome></FaHome> User Home</NavLink></li>
-                                <li><NavLink to="/dashboard/reservations"><FaCalendarAlt></FaCalendarAlt> Reservations</NavLink></li>
+                                <li><NavLink to="/dashboard/selectedClasses"><FaCalendarAlt></FaCalendarAlt> Reservations</NavLink></li>
                                 <li><NavLink to="/dashboard/history"><FaWallet></FaWallet> Payment History</NavLink></li>
 
                             </>
@@ -55,8 +55,6 @@ const Dashboard = () => {
 
                         <div className="divider"></div>
                         <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
-                        <li><NavLink to="/menu"> Our Menu</NavLink></li>
-                        <li><NavLink to="/order/salad">Order Food</NavLink></li>
                     </ul>
 
                 </div>

@@ -72,7 +72,7 @@ const AllUsers = () => {
                             <th>Name</th>
                             <th>Email</th>
                             <th>Role</th>
-                            <th>Action</th>
+                            <th>Role</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -81,25 +81,26 @@ const AllUsers = () => {
                                 <th>{index + 1}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td>{user.role} </td>
                                 <td >
-                                    {user.role === 'admin' ?  <>
-                                     
+                                    {/* {user.role === 'admin' ?  <>
+                                    
                                         {user.role}
                                     </> : <>   {user.role === 'instructor' ? 'instructor' :
                                         <button onClick={() => handleMakeInstructor(user)} className="btn btn-ghost bg-orange-600  text-white space-x-4"><FaUserGraduate ></FaUserGraduate></button>
-                                    } </>}
+                                    } </>} */}
 
-                                    {/* {user.role === 'admin' ? 'admin' :
-                                    <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600  text-white"><FaUserShield></FaUserShield></button>
-                                }
+                                    {user.role === 'admin' ? 'admin' :
+                                        <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600  text-white"><FaUserShield></FaUserShield></button>
+                                    }
+                                </td>
+                                <td>
 
-                                {user.role === 'instructor' ? 'instructor' :
+                                    {user.role === 'instructor' ? 'instructor' :
                                         <button onClick={() => handleMakeInstructor(user)} className="btn btn-ghost bg-orange-600  text-white space-x-4"><FaUserGraduate ></FaUserGraduate></button>
-                                    } */}
+                                    }
+
 
                                 </td>
-                               
 
                                 <td></td>
                             </tr>)

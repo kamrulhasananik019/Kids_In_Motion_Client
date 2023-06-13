@@ -61,9 +61,9 @@ const NavBar = () => {
                             <li>
                                 <Link to='/instructorspage'>Instructors Page</Link>
                             </li>
-                            <li>
+                          {user ?   <li>
                                 <Link to='/dashboard'>Dashboard</Link>
-                            </li>
+                            </li> : <></>}
                             <li>
                                 <Dark></Dark>
                             </li>
