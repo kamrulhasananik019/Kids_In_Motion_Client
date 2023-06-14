@@ -8,7 +8,7 @@ const Home = () => {
  
 
   return (
-    <section className="  bg-white dark:bg-black">
+    <section className=" bg-[--bgs-b]">
       <div className='pt-20px'>
         <Banner></Banner>
         <IcnBanner></IcnBanner>

@@ -5,13 +5,13 @@ import useAuth from './useAuth';
 
 
 
+const axiosSecure = axios.create({
+    baseURL: 'https://server-tan-eight.vercel.app/',
+});
 const useAxiosSecure = () => {
     const { logOut } = useAuth();
     const navigate = useNavigate();
 
-    const axiosSecure = axios.create({
-        baseURL: 'http://localhost:5000',
-    });
 
     useEffect(() => {
         axiosSecure.interceptors.request.use((config) => {

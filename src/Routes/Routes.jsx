@@ -19,6 +19,8 @@ import MyClasses from "../Pages/Dashboard/Instructor/MyClasses/MyClasses";
 import AllClasses from "../Pages/AllClasses/AllClasses";
 import InstructorsPage from "../Pages/InstructorsPage/InstructorsPage";
 import SelectedClassess from "../Pages/Dashboard/Student/SelectedClassess/SelectedClassess";
+import Payment from "../Pages/Dashboard/Payment/Payment";
+import Feedback from "../Pages/Dashboard/Admin/ManageClass/Feedback/Feedback";
 
 
 export const router = createBrowserRouter([
@@ -40,12 +42,12 @@ export const router = createBrowserRouter([
                 element: <LogIn></LogIn>
             },
             {
-                path:'allclasses',
-                element:<AllClasses></AllClasses>
+                path: 'allclasses',
+                element: <AllClasses></AllClasses>
             },
             {
-                path:'instructorspage',
-                element:<InstructorsPage></InstructorsPage>
+                path: 'instructorspage',
+                element: <InstructorsPage></InstructorsPage>
             }
             ,
             {
@@ -65,12 +67,21 @@ export const router = createBrowserRouter([
                         element: <AdminRoute><ManageClass></ManageClass></AdminRoute>
                     },
                     {
-                        path:'myclasses',
-                        element:<InstructorRoute><MyClasses></MyClasses></InstructorRoute>
-                    },{
-                        path:'selectedClasses',
-                        element:<PrivateRoute><SelectedClassess></SelectedClassess></PrivateRoute>
+                        path: 'myclasses',
+                        element: <InstructorRoute><MyClasses></MyClasses></InstructorRoute>
                     }
+                    , {
+                        path: 'selectedClasses',
+                        element: <PrivateRoute><SelectedClassess></SelectedClassess></PrivateRoute>,   
+                    },
+                    {
+                        path: 'payment/:id',
+                        element: <Payment></Payment>
+                    },{
+                        path:'feedback/:id',
+                     element: <AdminRoute><Feedback></Feedback></AdminRoute>
+                    }
+
                 ]
             }
         ]

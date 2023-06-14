@@ -3,6 +3,8 @@ import useAuth from '../../../../Components/hook/useAuth';
 import useAxiosSecure from '../../../../Components/hook/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
+import { Link, Outlet } from 'react-router-dom';
+import Pays from './Pays';
 
 const SelectedClasses = () => {
     const { user } = useAuth()
@@ -25,28 +27,29 @@ const SelectedClasses = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                axiosSecure.delete(`/select/${id}`,{
+                axiosSecure.delete(`/select/${id}`, {
                     method: 'DELETE'
                 })
                     .then(data => {
-                        if (data.data.deletedCount ) {
+                        if (data.data.deletedCount) {
                             Swal.fire(
                                 'Deleted!',
                                 'Your Toy has been deleted.',
                                 'success'
-                                
+
                             )
                             refetch()
                         }
                     })
             }
         })
-     
+
     }
 
 
     return (
         <section>
+            <Outlet></Outlet>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
@@ -86,7 +89,10 @@ const SelectedClasses = () => {
                                 <td>{item.price}</td>
                                 <td>{item.seats}</td>
 
-                                <td><button className="btn btn-outline btn-info">Pay</button></td>
+                                <td>
+                                    <Pays item={item}> </Pays>
+
+                                </td>
                                 <td>
                                     <button onClick={() => handleDelete(item._id)} className="btn btn-outline btn-warning">Delete</button>
                                 </td>

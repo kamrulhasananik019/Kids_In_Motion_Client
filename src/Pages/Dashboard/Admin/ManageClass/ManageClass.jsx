@@ -3,6 +3,7 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import useAxiosSecure from '../../../../Components/hook/useAxiosSecure';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const ManageClass = () => {
     const [axiosSecure] = useAxiosSecure();
@@ -107,7 +108,8 @@ const ManageClass = () => {
                                     <div className='flex flex-col gap-3'>
                                         <button className="btn btn-sm btn-outline btn-success" onClick={() => handleApproved(item._id)}>approved</button>
                                         <button className="btn btn-sm btn-outline btn-error" onClick={() => handleDenied(item._id)}>denied</button>
-                                        <button className="btn btn-sm btn-outline btn-warning" onClick={() => window.my_modal_5.showModal()}>feedback</button>
+                                    <Link to={`/dashboard/feedback/${item._id}`}>
+                                    <button className="btn btn-sm btn-outline btn-warning" >feedback</button></Link>
                                     </div>
                                 </td>
                             </tr>
@@ -116,16 +118,7 @@ const ManageClass = () => {
                     </tbody>
 
                 </table>
-                <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-                    <form method="dialog" className="modal-box">
-                        <h3 className="font-bold text-lg">Hello!</h3>
-                        <textarea name="" className='border ' id="" cols="60" rows="10"></textarea>
-                        <div className="modal-action">
-                
-                            <input className="btn btn-sm mt-4" type="submit" value="Add feedback" />
-                        </div>
-                    </form>
-                </dialog>
+           
             </div>
 
 

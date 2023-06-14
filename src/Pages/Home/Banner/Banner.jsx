@@ -2,19 +2,18 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div>
+        <div >
             <div
-                className="hero "
+                className="hero  h-96"
                 style={{
-                    backgroundImage: 'url("https://img.freepik.com/free-vector/green-cricket-sports-background-with-illustration-players-golden-trophy-cup_1302-5494.jpg?w=1060&t=st=1686476279~exp=1686476879~hmac=26c97baa2fcc3e70bd5ac5b886e51c2cc769025c20330f30683a7ef06e370b50")'
+                    backgroundImage: 'url("https://as2.ftcdn.net/v2/jpg/02/19/80/13/1000_F_219801337_3kbasqLvgbUxAGVDH8QS35Sm4SEiPJFJ.jpg")'
                 }}
             >
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md">
-                        <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-                        <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        <button className="btn btn-primary">Get Started</button>
+                        <h1 className="mb-5 text-5xl font-bold">Kids In Motion</h1>
+                        <p className="mb-5">Welcome to our Summer Vacation Sports website, where adventure meets excitement and fun knows no bounds! Get ready to dive into a world of thrilling activities, explore new horizons, and make unforgettable memories under the sun.</p>
                     </div>
                 </div>
             </div>

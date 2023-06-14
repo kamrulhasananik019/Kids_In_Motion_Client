@@ -2,7 +2,8 @@ import React from 'react';
 
 const Footer = () => {
     return (
-            <footer className="footer mt-10 py-10 px-28 bg-[--nav-bg] text-base-content">
+        <footer className='bg-[--f-to] '>
+            <div className="footer py-10 px-28 text-base-content">
                 <div>
                     <img src="https://i.ibb.co/p2ZXTr4/kids-in-motion-summer-sports-camp-removebg-preview.png" width={90} alt="" />
                     <p className='font-bold text-2xl'>Kids In Motion</p>
@@ -12,7 +13,7 @@ const Footer = () => {
                     <a className="link link-hover">Football</a>
                     <a className="link link-hover">Cricket</a>
                     <a className="link link-hover">Hokey</a>
-                    <a className="link link-hover"></a>
+                 
                 </div>
                 <div>
                     <span className="footer-title">Legal</span>
@@ -22,11 +23,14 @@ const Footer = () => {
                 </div>
                 <div>
                     <span className="footer-title">Support</span>
-                    <a className="link link-hover">SUPPORT 24/7</a>
-                    <a className="link link-hover">Live Class</a>
-                    <a className="link link-hover">Trainers in ground</a>
+                    <a className="link link-hover">kids55@gmail.com</a>
+                    <a className="link link-hover">+0554454544</a>
+                    <a className="link link-hover">www.kids.net</a>
                 </div>
-            </footer>
+            </div>
+         <div className='text-center'>   <p>Copyright © 2023 - All right reserved by Kid Ltd</p></div>
+        </footer>
+        
     );
 };
 

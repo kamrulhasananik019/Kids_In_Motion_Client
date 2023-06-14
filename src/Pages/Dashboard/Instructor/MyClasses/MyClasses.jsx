@@ -28,8 +28,9 @@ const MyClasses = () => {
                             <th>Price</th>
                             <th>seats</th>
                             <th>Status</th>
+                            <th>Feedback</th>
                             <th>Action</th>
-                            <th></th>
+                           
                         </tr>
                     </thead>
                     <tbody>
@@ -58,6 +59,7 @@ const MyClasses = () => {
                                 <td>{item.price}</td>
                                 <td>{item.seats}</td>
                                 <td>{item.status}</td>
+                                <td>{item?.feedback}</td>
                                 <button className="btn btn-outline btn-secondary">Update </button>
                             </tr>
                         ))}

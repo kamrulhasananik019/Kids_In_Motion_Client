@@ -116,15 +116,20 @@
 
 .dark-theme {
   --nav-bg:#121212bf;
+  --bgs-b:#121212bf;
+  --f-to:#2B3440;
 }
 .light-theme{
-  --nav-bg: #FCE5E6
+  --nav-bg: #FCE5E6;
+  --bgs-b:#ffffff;
+  --f-to:#d5d6d7;
 }
 
 /* Dark End */
 
 .drawer-side a.active {
   color: rgb(182, 99, 99);
+
 }
 
 .drawer-side a {
