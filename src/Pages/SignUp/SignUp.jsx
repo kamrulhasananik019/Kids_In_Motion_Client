@@ -62,7 +62,7 @@ const SignUp = () => {
                         <h1 className="text-5xl font-bold">Sign Up  now!</h1>
              <img src="https://img.freepik.com/free-vector/app-development-concept-with-flat-deisng_23-2147852845.jpg?w=826&t=st=1686763904~exp=1686764504~hmac=f515ab351b6bb59f4dd99d77049a9fc70a6ce248ed78b2ef889ea25c5b458b50" alt="" />
                     </div>
-                    <div className="card bg-[#cab084] flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                             <div className="form-control">
                                 <label className="label">
