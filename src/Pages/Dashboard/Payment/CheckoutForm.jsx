@@ -83,7 +83,7 @@ const CheckoutForm = ({ price, item }) => {
                 seats: item.seats,
                 date: new Date(),
                 id: item._id,
-                enrolledStuNum: 0
+                enrolledStuNum: 1
             }
 
             axiosSecure.patch('/payments', payment)

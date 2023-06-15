@@ -22,7 +22,7 @@ const SignUp = () => {
                     .then(() => {
                         const saveUser = { name: data.name, email: data.email, password: data.password, photo: data.photoURL }
 
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://server-dun-seven.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'

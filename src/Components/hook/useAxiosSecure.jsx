@@ -6,7 +6,7 @@ import useAuth from './useAuth';
 
 
 const axiosSecure = axios.create({
-    baseURL: 'https://server-tan-eight.vercel.app/',
+    baseURL: 'https://server-dun-seven.vercel.app',
 });
 const useAxiosSecure = () => {
     const { logOut } = useAuth();
