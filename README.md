@@ -1,7 +1,6 @@
-# b712-summer-camp-client-side-Anik407
-b712-summer-camp-client-side-Anik407 created by GitHub Classroom
 
 Live Link : https://ass-12-6a757.web.app
+server: https://github.com/kamrulhasananik019/Kids_In_Motion_server
 
 <img  src="https://i.ibb.co/p2ZXTr4/kids-in-motion-summer-sports-camp-removebg-preview.png" >
 
